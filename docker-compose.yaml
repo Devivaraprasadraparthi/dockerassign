@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # 1. MongoDB Database Service
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb_service
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - app_network
+
+  # 2. Flask Backend Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: dockerfile
+    container_name: flask_backend
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      # In Docker, refer to the service name 'mongodb', not 'localhost'
+      - MONGO_URI=mongodb://mongodb:27017/
+      - FLASK_ENV=development
+    depends_on:
+      - mongodb
+    networks:
+      - app_network
+
+  # 3. Express Frontend Service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: express_frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      # In Docker, refer to the service name 'backend', not 'localhost'
+      - BACKEND_URL=http://backend:5000/
+    depends_on:
+      - backend
+    networks:
+      - app_network
+
+# Persistent volume so MongoDB data survives container restarts
+volumes:
+  mongo_data:
+
+# Internal network allowing services to communicate by name
+networks:
+  app_network:
+    driver: bridge

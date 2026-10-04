@@ -1,0 +1,14 @@
+Sep 25 07:44:38 ubuntu24 systemd[1]: Started mongod.service - MongoDB Database Server.
+Sep 25 07:44:38 ubuntu24 mongod[23907]: {"t":{"$date":"2026-09-25T07:44:38.491Z"},"s":"F",  "c":"CONTROL",  "id":12257600,"ctx":"main","msg":"MongoDB cannot start: Linux kernel versions 6.19 and newer has a known incompatibility with this version of MongoDB. See https://jira.mongodb.org/browse/SERVER-121912 for more information."}
+Sep 25 07:44:38 ubuntu24 systemd[1]: mongod.service: Main process exited, code=exited, status=1/FAILURE
+Sep 25 07:44:38 ubuntu24 systemd[1]: mongod.service: Failed with result 'exit-code'.
+-- Boot 8a579e3c454f4b05ad9188f56d68c358 --
+Sep 25 11:22:15 ubuntu24 systemd[1]: Started mongod.service - MongoDB Database Server.
+Sep 25 11:22:17 ubuntu24 mongod[1400]: {"t":{"$date":"2026-09-25T11:22:17.001Z"},"s":"F",  "c":"CONTROL",  "id":12257600,"ctx":"main","msg":"MongoDB cannot start: Linux kernel versions 6.19 and newer has a known incompatibility with this version of MongoDB. See https://jira.mongodb.org/browse/SERVER-121912 for more information."}
+Sep 25 11:22:17 ubuntu24 systemd[1]: mongod.service: Main process exited, code=exited, status=1/FAILURE
+Sep 25 11:22:17 ubuntu24 systemd[1]: mongod.service: Failed with result 'exit-code'.
+Sep 25 11:22:17 ubuntu24 systemd[1]: mongod.service: Consumed 1.250s CPU time.
+Sep 25 12:31:01 ubuntu24 systemd[1]: Started mongod.service - MongoDB Database Server.
+Sep 25 12:31:01 ubuntu24 mongod[29121]: {"t":{"$date":"2026-09-25T12:31:01.215Z"},"s":"F",  "c":"CONTROL",  "id":12257600,"ctx":"main","msg":"MongoDB cannot start: Linux kernel versions 6.19 and newer has a known incompatibility with this version of MongoDB. See https://jira.mongodb.org/browse/SERVER-121912 for more information."}
+Sep 25 12:31:01 ubuntu24 systemd[1]: mongod.service: Main process exited, code=exited, status=1/FAILURE
+Sep 25 12:31:01 ubuntu24 systemd[1]: mongod.service: Failed with result 'exit-code'.
